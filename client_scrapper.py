@@ -45,14 +45,7 @@ with Session() as s:
         buyer = list(map(lambda item: item.text, product.find_all('p', class_="mb-0 fs-14")))[2]
         profit = list(map(lambda item: item.text, product.find_all('p', class_="mb-0 fs-14")))[3]
         tracking_number = list(map(lambda item: item.text, product.find_all('p', class_="mb-0 fs-14")))[5]
-        # print(title)
-        # print(price)
-        # print(order.split()[2])
-        # print(date.split()[1])
-        # print(buyer.split()[1])
-        # print(profit.split()[1])
-        # print(tracking_number.split()[1])
-        # print()
+
         db = mysql.connector.connect(
             host="localhost",
             user=os.environ['DB_USER'],
